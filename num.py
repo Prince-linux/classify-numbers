@@ -6,8 +6,24 @@
 # the average of the values in the list.
 
 
+# returns an int
+## Asks the user to enter a number
+# @param prompt str the prompt to show the user
+# @return int/float the value that user entered (int, float)
+#
+
 def read_num(prompt):
-    pass
+    while True:
+        num = input("{}".format(prompt))
+        try:
+            number = int(num)
+            return type(number)
+        except ValueError:
+            try:
+                number = float(num)
+                return type(number)
+            except ValueError:
+                print("Please enter a valid number(integer or a decimal number): ")
 
 # returns a boolean 
 ## Asks the user to enter a boolean value (yes/no).
@@ -24,25 +40,26 @@ def read_boolean(prompt):
         else:
             print("Sorry, I do not understand. Please answer 'yes' or 'no'")
 
+
+
+# returns two different lists(higher_numbers, lower_numbers)
+
+def arrange_num(prompt):
+    pass
+
+# unit testing
 if __name__ == '__main__':
+    #TEMP: testing read_num fucntion
+    a = read_num("Please enter a number: ")
+    print("Function returned: {}".format(a))
+    # END TEMP
+
     #TEMP: testing read_boolean function
-    b = read_boolean("Are you sure?")
-    print("Function returned: {}".format(b))
+    #b = read_boolean("Are you sure?")
+    #print("Function returned: {}".format(b))
     # END TEMP
 
     # TODO: main program goes here
-    pass
-
-
-
-# arranges the list 
-
-def arrange_nums(num):
-    pass
-
-
-
-if __name__ == '__main__':
     pass
 
 
