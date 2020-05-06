@@ -6,13 +6,15 @@
 # the average of the values in the list.
 
 
-# returns an int
-## Asks the user to enter a number
-# @param prompt str the prompt to show the user
-# @return int/float the value that user entered (int, float)
-#
+# returns an int or float type.
 
 def read_num(prompt):
+    """
+     Asks the user to enter a number
+     @param prompt str the prompt to show the user    
+     @return int/float the type value that user entered (int, float)
+    
+    """
     while True:
         num = input("{}".format(prompt))
         try:
@@ -26,11 +28,15 @@ def read_num(prompt):
                 print("Please enter a valid number(integer or a decimal number): ")
 
 # returns a boolean 
-## Asks the user to enter a boolean value (yes/no).
-    # @param prompt str the prompt to show the user
-    # @return bool the value that user entered (True for yes, False for no)
-    #
 def read_boolean(prompt):
+
+    """
+    Asks the user to enter a boolean value (yes/no).
+    @param prompt str the prompt to show the user
+    @return bool the value that user entered (True for yes, False for no)
+    
+    """
+
     while True:
         ans = input("{} ".format(prompt)).strip().lower()
         if ans in ('yes', 'y'):
@@ -46,6 +52,7 @@ def read_boolean(prompt):
 
 def arrange_num(prompt):
     pass
+
 
 # unit testing
 if __name__ == '__main__':
