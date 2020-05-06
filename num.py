@@ -25,7 +25,7 @@ def read_num(prompt):
                 number = float(num)
                 return type(number)
             except ValueError:
-                print("Please enter a valid number(integer or a decimal number): ")
+                print("Please enter a valid number(integer or a decimal number)")
 
 # returns a boolean 
 def read_boolean(prompt):
