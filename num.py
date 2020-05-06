@@ -1,9 +1,9 @@
-# This is program asks the user to enter a cutoff poiny, some values and then 
-# arrange the numbers in two groups: numbers that are less than or equal to the 
+# This program asks the user to enter a cutoff point, numbers and then 
+# arrange the numbers in two groups: numbers that are lesser than or equal to the 
 # the cutoff point and numbers that are greater than the cutoff point.
 #
-# The progam will print out the number of items in each list as well as 
-# the average of the values in the list.
+# The progam prints out the number of items in each list as well as 
+# the average of the values in each list.
 
 
 # returns an int or float type.
