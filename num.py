@@ -12,7 +12,7 @@ def read_num(prompt):
     """
      Asks the user to enter a number
      @param prompt str the prompt to show the user    
-     @return int/float the type value that user entered (int, float)
+     @return type value that user entered (int, float)
     
     """
     while True:
