@@ -8,7 +8,7 @@
 
 # returns an int or float type.
 
-def read_num(prompt):
+def read_nums(prompt):
     """
      Asks the user to enter a number
      @param prompt str the prompt to show the user    
@@ -16,13 +16,13 @@ def read_num(prompt):
     
     """
     while True:
-        num = input("{}".format(prompt))
+        nums = input("{}".format(prompt))
         try:
-            number = int(num)
+            number = int(nums)
             return type(number)
         except ValueError:
             try:
-                number = float(num)
+                number = float(nums)
                 return type(number)
             except ValueError:
                 print("Please enter a valid number(integer or a decimal number)")
@@ -50,15 +50,38 @@ def read_boolean(prompt):
 
 # returns two different lists(higher_numbers, lower_numbers)
 
-def arrange_num(prompt):
-    pass
+def arrange_nums(nums, cutoff):
+    """
+    Arranges numbers into two different list comparing them to the cutoff number
+    @param nums the list of number
+    @param cutoff the cutoff number
+    @return list greater than cutoff and list smaller than cutoff
+    """
+    big_nums = []
+    small_nums = []
+    for i in nums:
+        if i > cutoff:
+            i = big_nums.append(i)
+        else:
+            i = small_nums.append(i)
+    return (big_nums, small_nums)
+
+    
+    
+        
+    
 
 
 # unit testing
 if __name__ == '__main__':
-    #TEMP: testing read_num fucntion
-    a = read_num("Please enter a number: ")
-    print("Function returned: {}".format(a))
+    #TEMP: testing arrange_nums fucntion
+    c = arrange_nums([1, 2, 3, 4, 5, 6, 7, 8, 9], 4)
+    print("Function returned: {}".format(c))
+    # END TEMP
+
+    #TEMP: testing read_nums function
+    #a = read_num("Please enter a number: ")
+    #print("Function returned: {}".format(a))
     # END TEMP
 
     #TEMP: testing read_boolean function
