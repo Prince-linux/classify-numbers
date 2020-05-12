@@ -67,16 +67,31 @@ def arrange_nums(nums, cutoff):
     return (big_nums, small_nums)
 
     
-    
-        
-    
+def build_list(big_nums, small_nums):
+    if len(big_nums) > 1:
+        print("These are the numbers that are larger than your cut off value: " + str(big_nums))
+    elif len(big_nums) == 1:
+        print("This is the number that is larger than your cut off value: " + str(big_nums))
+    else:
+        print("This list of numbers larger than the cut off value is empty")
+
+    if len(small_nums) > 1:
+        print("These are the numbers that are smaller than your cut off value: " + str(small_nums))
+    elif len(small_nums) == 1:
+        print("This is the number that is smaller than your cut off value: " + str(small_nums))
+    else:
+        print("This list of numbers smaller than the cut off value is empty")
 
 
 # unit testing
 if __name__ == '__main__':
+    #TRMP: testing build_list function
+    d = build_list([80, 90, 70],[11, 12, 8, 5])
+    #END TEMP
+
     #TEMP: testing arrange_nums fucntion
-    c = arrange_nums([1, 2, 3, 4, 5, 6, 7, 8, 9], 4)
-    print("Function returned: {}".format(c))
+    #c = arrange_nums([1, 2, 3, 4, 5, 6, 7, 8, 9], 4)
+    #print("Function returned: {}".format(c))
     # END TEMP
 
     #TEMP: testing read_nums function
