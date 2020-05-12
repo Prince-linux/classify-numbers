@@ -6,6 +6,9 @@
 # the average of the values in each list.
 
 
+import statistics
+
+
 # returns an int or float type.
 
 def read_num(prompt):
@@ -16,14 +19,14 @@ def read_num(prompt):
     
     """
     while True:
-        num = input("{}".format(prompt))
+        nums = input("{}".format(prompt))
         try:
-            number = int(num)
-            return type(number)
+            number = int(nums)
+            return (number)
         except ValueError:
             try:
-                number = float(num)
-                return type(number)
+                number = float(nums)
+                return (number)
             except ValueError:
                 print("Please enter a valid number(integer or a decimal number)")
 
@@ -50,7 +53,8 @@ def read_boolean(prompt):
 
 # returns two different lists(higher_numbers, lower_numbers)
 
-def arrange_num(num, cutoff):
+
+def arrange_nums(nums, cutoff):
     """
     Arranges numbers into two different list comparing them to the cutoff number
     @param nums the list of number
@@ -66,28 +70,60 @@ def arrange_num(num, cutoff):
             i = small_nums.append(i)
     return (big_nums, small_nums)
 
+
 # prints the data in a list    
 def show_list(num_list):
     """
     Prints out the data in a list
     @param num_list the list to output
     """
-    if len(num_list) > 1:
-        print(num_list)
-    elif len(num_list) == 1:
-        print(num_list)
+    if len(num_list) > 0:
+        print("These are data in the list: {}".format(num_list))
     else:
         print("This list is empty")
 
+# main program
+def build_list():
+    """
+    @return nums the data input from user
+    """
+    nums = []
+    while True:
+        nums.append(read_num('Enter a number:'))
+        if not read_boolean('Do you want to enter another number?:'):
+            return nums
 
+
+def report(small_len, small_avg, big_len, big_avg):
+    """
+    @param small_len the length of numbers lower than cutoff
+    @param small_avg the average of numbers lower than cutoff
+    @param big_len the length of numbers higher than cutoff
+    @param big_avg the length of numbers higher than cutoff 
+    """
+    print("Length of numbers smaller than cutoff: {}".format(small_len))
+    print("Length of numbers greater than cutoff: {}".format(big_len))
+    print("Average of numbers greater than cutoff: {}".format(big_avg))
+    print("Average of numbers smaller than cutoff: {}".format(small_avg))
 
 
 # unit testing
 if __name__ == '__main__':
-    #TRMP: testing show_list function
-    d = show_list([80, 90, 70])
-    e = show_list([20, 50, 60])
-    f = show_list([])
+
+    cutoff = read_num('Enter the cutoff value: ')
+    numlist = build_list()
+    small_nums, big_nums = arrange_nums(numlist, cutoff)
+    show_list(small_nums)
+    show_list(big_nums)
+    small_len = len(small_nums)
+    small_avg = statistics.mean(small_nums)
+    big_len = len(big_nums)
+    big_avg = statistics.mean(big_nums)
+    print(report(small_len, small_avg, big_len, big_avg))
+    #TEMP: testing show_list function
+    #d = show_list([80, 90, 70])
+    #e = show_list([20, 50, 60])
+    #f = show_list([])
     #END TEMP
 
     #TEMP: testing arrange_nums fucntion
