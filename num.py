@@ -8,7 +8,7 @@
 
 # returns an int or float type.
 
-def read_nums(prompt):
+def read_num(prompt):
     """
      Asks the user to enter a number
      @param prompt str the prompt to show the user    
@@ -16,13 +16,13 @@ def read_nums(prompt):
     
     """
     while True:
-        nums = input("{}".format(prompt))
+        num = input("{}".format(prompt))
         try:
-            number = int(nums)
+            number = int(num)
             return type(number)
         except ValueError:
             try:
-                number = float(nums)
+                number = float(num)
                 return type(number)
             except ValueError:
                 print("Please enter a valid number(integer or a decimal number)")
@@ -50,7 +50,7 @@ def read_boolean(prompt):
 
 # returns two different lists(higher_numbers, lower_numbers)
 
-def arrange_nums(nums, cutoff):
+def arrange_num(num, cutoff):
     """
     Arranges numbers into two different list comparing them to the cutoff number
     @param nums the list of number
@@ -66,27 +66,28 @@ def arrange_nums(nums, cutoff):
             i = small_nums.append(i)
     return (big_nums, small_nums)
 
-    
-def build_list(big_nums, small_nums):
-    if len(big_nums) > 1:
-        print("These are the numbers that are larger than your cut off value: " + str(big_nums))
-    elif len(big_nums) == 1:
-        print("This is the number that is larger than your cut off value: " + str(big_nums))
+# prints the data in a list    
+def show_list(num_list):
+    """
+    Prints out the data in a list
+    @param num_list the list to output
+    """
+    if len(num_list) > 1:
+        print(num_list)
+    elif len(num_list) == 1:
+        print(num_list)
     else:
-        print("This list of numbers larger than the cut off value is empty")
+        print("This list is empty")
 
-    if len(small_nums) > 1:
-        print("These are the numbers that are smaller than your cut off value: " + str(small_nums))
-    elif len(small_nums) == 1:
-        print("This is the number that is smaller than your cut off value: " + str(small_nums))
-    else:
-        print("This list of numbers smaller than the cut off value is empty")
+
 
 
 # unit testing
 if __name__ == '__main__':
-    #TRMP: testing build_list function
-    d = build_list([80, 90, 70],[11, 12, 8, 5])
+    #TRMP: testing show_list function
+    d = show_list([80, 90, 70])
+    e = show_list([20, 50, 60])
+    f = show_list([])
     #END TEMP
 
     #TEMP: testing arrange_nums fucntion
