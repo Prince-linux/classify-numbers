@@ -71,17 +71,6 @@ def arrange_nums(nums, cutoff):
     return (big_nums, small_nums)
 
 
-# prints the data in a list    
-def show_list(num_list):
-    """
-    Prints out the data in a list
-    @param num_list the list to output
-    """
-    if len(num_list) > 0:
-        print("These are data in the list: {}".format(num_list))
-    else:
-        print("This list is empty")
-
 # main program
 def build_list():
     """
@@ -113,8 +102,6 @@ if __name__ == '__main__':
     cutoff = read_num('Enter the cutoff value: ')
     numlist = build_list()
     small_nums, big_nums = arrange_nums(numlist, cutoff)
-    show_list(small_nums)
-    show_list(big_nums)
     small_len = len(small_nums)
     small_avg = statistics.mean(small_nums)
     big_len = len(big_nums)
